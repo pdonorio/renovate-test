@@ -4,6 +4,7 @@ starknet:
   storage: "/app/data"
 
 image:
+  # renovate: container image
   repository: "ghcr.io"
   name: "starkware-libs/papyrus"
   tag: "0.1.2-alpha"  # Overrides image tag, default is <namespace>-<chart appVersion>

@@ -7,9 +7,9 @@
   repositories: [
     'pdonorio/renovate-test'
   ],
-  ignorePaths: [
-    'infra/helm/app/**',
-  ],
+//   ignorePaths: [
+//     'infra/helm/app/**',
+//   ],
   customManagers: [
 
     {
@@ -19,7 +19,8 @@
         '(^|/)values\\.y[a]?ml$',
       ],
       matchStrings: [
-        '#\\s?renovate: container image\\s+repository:\\s?\\"(?<registryUrl.*)\\"\\s+name:\\s?\\"(?<depName>.*)\\"\\s+tag:\\s?\\"(?<currentValue>[\\d\\.]+)\\"',
+        '# renovate: container image\\s+repository: \\"(?<registryUrl>.*)\\"\\s+name:\\s+\\"(?<depName>.*)\\"\\s+tag:\\s+\\"(?<currentValue>[\\d\\.]+)\\"',
+        // '#\\s?renovate: container image\\s+repository:\\s?\\"(?<registryUrl.*)\\"\\s+name:\\s?\\"(?<depName>.*)\\"\\s+tag:\\s?\\"(?<currentValue>[\\d\\.]+)\\"',
       ],
       // TODO: check how to use registryUrl correctly
       // https://docs.renovatebot.com/configuration-options/
