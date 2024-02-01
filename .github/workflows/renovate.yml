@@ -1,0 +1,45 @@
+name: "Execute Renovate Bot"
+on:
+  workflow_dispatch:
+    inputs:
+      log_level:
+        type: choice
+        description: "Log level"
+        required: true
+        default: "info"
+        options:
+          - "info"
+          - "debug"
+      dry_run:
+        type: choice
+        description: "Execute Renovate in dry run mode"
+        required: false
+        default: "unset"
+        options:
+          - unset
+          - extract
+          - lookup
+          - full
+concurrency:
+  group: execute-renovate-bot
+  cancel-in-progress: true
+
+env:
+  LOG_LEVEL: "${{ github.event.inputs.log_level || 'info' }}"
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set environment
+        if: ${{ github.event.inputs.dry_run != 'unset' }}
+        run: |
+            echo "RENOVATE_DRY_RUN=${{ github.event.inputs.dry_run }}" | tee -a $GITHUB_ENV
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v40.0.2
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }}
+          renovate-version: 37.25.0-full
+          configurationFile: renovate.json5
