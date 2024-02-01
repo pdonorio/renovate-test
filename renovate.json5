@@ -9,7 +9,7 @@
   ],
   ignorePaths: [
     'infra/helm/app/**',
-  ]
+  ],
   customManagers: [
 
     // Manage custom renovate container image in helm values.yaml
