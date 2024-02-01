@@ -1,8 +1,5 @@
 replicaCount: 1
 
-starknet:
-  storage: "/app/data"
-
 image:
   # renovate: container image
   repository: "ghcr.io"
