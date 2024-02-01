@@ -1,0 +1,30 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  username: 'renovate-github-actions[bot]',
+  gitAuthor: 'renovate-github-actions[bot] <135154770+renovate-github-actions[bot]@users.noreply.github.com>',
+  onboarding: false,
+  platform: 'github',
+  repositories: [
+    'pdonorio/renovate-test'
+  ],
+  ignorePaths: [
+    'infra/helm/app/**',
+  ]
+  customManagers: [
+
+    // Manage custom renovate container image in helm values.yaml
+    {
+      customType: 'regex',
+      datasourceTemplate: 'docker',
+      fileMatch: [
+        '(^|/)values\\.y[a]?ml$',
+      ],
+      matchStrings: [
+        '#\\s?renovate: container image\\s+repository:\\s?\\"(<registryUrl.*)\\"\\s+name:\\s?\\"(<depName>.*)\\"\\s+tag:\\s?\\"(<currentValue>[\\d\\.]+)\\"',
+      ],
+      // TODO: check how to use registryUrl correctly
+      // https://docs.renovatebot.com/configuration-options/
+    },
+
+  ],
+}
