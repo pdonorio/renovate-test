@@ -4,7 +4,7 @@ image:
   # renovate: container image
   repository: "ghcr.io"
   name: "starkware-libs/papyrus"
-  tag: "0.1.2-alpha"  # Overrides image tag, default is <namespace>-<chart appVersion>
+  tag: "0.1.3-alpha"  # Overrides image tag, default is <namespace>-<chart appVersion>
   tagPrefix: ""       # Overrides default tag prefix (default is <namespace>)
   gitSha: ""          # Overrides chart appVersion used in image tags
   pullPolicy: IfNotPresent
