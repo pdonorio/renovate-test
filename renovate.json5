@@ -24,7 +24,8 @@
         '(^|/)values\\.y[a]?ml$',
       ],
       matchStrings: [
-        '# renovate: container image\\s+repository:\\s?\\"?(?<repo>\\s+])\\"?\\s+name:\\s+\\"?(?<name>\\s+])\\"?\\s+tag:\\s+\\"?(?<currentValue>\\s+])\\"?',
+        //'# renovate: container image\\s+repository:\\s?\\"?(?<repo>\\s+])\\"?\\s+name:\\s+\\"?(?<name>\\s+])\\"?\\s+tag:\\s+\\"?(?<currentValue>\\s+])\\"?',
+        '# renovate: container image\\s+repository:\\s?\\"?(?<repo>[^\\"]+)\\"?\\s+name:\\s+\\"?(?<name>[^\\"]+)\\"?\\s+tag:\\s+\"?(?<currentValue>[^\\"]+)\\"?'
       ],
       "depNameTemplate": "{{repo}}/{{name}}",
     },
