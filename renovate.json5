@@ -26,7 +26,7 @@
       matchStrings: [
         '# renovate: container image\\s+repository:\\s?\\"?(?<repo>[^\\s\"]*)\\"?\\s+name:\\s+\\"?(?<name>[^\\s\"]*)\\"?\\s+tag:\\s+\\"?(?<currentValue>[^\\s\"]*)\\"?',
       ],
-      "depNameTemplate": "https://{{repo}}/{{name}}",
+      "depNameTemplate": "{{repo}}/{{name}}",
     },
 
   ],
