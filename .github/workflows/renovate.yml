@@ -38,9 +38,8 @@ jobs:
         run: |
             echo "RENOVATE_DRY_RUN=${{ github.event.inputs.dry_run }}" | tee -a $GITHUB_ENV
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v40.0.2
+        uses: renovatebot/github-action@v40.2.2
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
-          renovate-version: 37.165.0-full
-          #renovate-version: 37.25.0-full
+          renovate-version: 37.428.2-full
           configurationFile: renovate.json5
