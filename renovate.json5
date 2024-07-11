@@ -12,7 +12,7 @@
   ],
 
   ignorePaths: [
-    'infra/helm/app/**',
+    '**/infra/helm/app/**',
   ],
   customManagers: [
 
