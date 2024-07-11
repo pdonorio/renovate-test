@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  # renovate: container image
+  repository: "docker.io"
+  name: "jenkins/jenkins"
+  tag: "lts"  # Overrides image tag, default is <namespace>-<chart appVersion>
+  tagPrefix: ""       # Overrides default tag prefix (default is <namespace>)
+  gitSha: ""          # Overrides chart appVersion used in image tags
+  pullPolicy: Always

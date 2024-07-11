@@ -11,9 +11,9 @@
     'pdonorio/renovate-test',
   ],
 
-//   ignorePaths: [
-//     'infra/helm/app/**',
-//   ],
+  ignorePaths: [
+    'infra/helm/app/**',
+  ],
   customManagers: [
 
     {
